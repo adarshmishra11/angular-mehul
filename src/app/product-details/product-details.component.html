@@ -1,0 +1,10 @@
+<div *ngIf="product">
+  <h2>
+    {{ product.name }}
+  </h2>
+  <p *ngIf="product.description; else noDesc">{{ product.description }}</p>
+  <h2>{{ product.price | currency: 'INR' }}</h2>
+  <button (click)="onBuy()">Buy</button>
+  <h2></h2>
+  <ng-template #noDesc><p>No description given</p></ng-template>
+</div>

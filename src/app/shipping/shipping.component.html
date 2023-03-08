@@ -1,0 +1,6 @@
+<p>shipping works!</p>
+
+<div class="cart-item" *ngFor="let item of shippingPrices">
+    <span [id]="item.type">{{ item.type }}</span
+  >  <span>{{ item.price | currency: 'INR' }}</span>
+</div>

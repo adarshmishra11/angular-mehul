@@ -1,0 +1,9 @@
+<div>
+  <h2>
+    <a [routerLink]="['products', product.id]"> {{ product.name }}</a>
+  </h2>
+  <p *ngIf="product.description; else noDesc">{{ product.description }}</p>
+  <button (click)="onShareClick()">Share</button>
+  <button *ngIf="product.price > 700" (click)="onNotify.emit()">Notify</button>
+  <ng-template #noDesc>No description given</ng-template>
+</div>

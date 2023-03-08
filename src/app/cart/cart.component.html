@@ -1,0 +1,11 @@
+<h3>Cart</h3>
+
+<a [routerLink]="['/shipping']" class="button fancy-button">Shipping Prices </a>
+
+<div class="cart-items" *ngFor="let item of cartItems">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency: 'INR' }}</span>
+</div>
+
+<div *ngIf="cartItems.length !== 0; else noItems"></div>
+<ng-template #noItems><p>No Items added</p></ng-template>
